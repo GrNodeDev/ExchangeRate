@@ -1,0 +1,4 @@
+runtime "node"
+exec "ironworker.js"
+dir "node_modules"
+file "package.json"
