@@ -1,8 +1,12 @@
 # Simple Exchange Rate Worker
 
-In this project we will create a very simple Node.js script that will get exchange rates via a REST API and then email them out.  There is not much actual usefulness of this process, however the goal is to provide an introduction into the IronWorker service provided by Iron.io and the Lambda service provided by Amazon Web Services.
+In this project we will create a very simple Node.js script that will get exchange rates via a REST API and then email them out.  There is not much actual usefulness of this process, however the goal is to provide an introduction into the IronWorker service provided by Iron.io and the Lambda service provided by Amazon Web Services.  
 
 The project will first walk you through creating the script and deploying to IronWorker.  Once that is completed, we will copy the file, adjust a bit and then upload to Lambda and run.
+
+The slides from the talk can be found at [http://www.slideshare.net/jasonfill/workers-and-event-processors-that-scale](http://www.slideshare.net/jasonfill/workers-and-event-processors-that-scale)
+
+> NOTE: The Mandrill API key and the values in the iron.json file are expired.  You will need to insert your own credentials.
 
 ## IronWorker
 
@@ -163,15 +167,9 @@ build "npm install"
 remote
 ```
 
+Review all the options at [http://dev.iron.io/worker/reference/dotworker/](http://dev.iron.io/worker/reference/dotworker/)
+
 2) Save the file with the name ```exchangerates.worker```
-
-### Test Locally
-
-The IronWorker CLI provides a handy command that allows you to test your worker locally prior to uploading.  So to test our command we will run:
-
-```
-iron_worker run exchangerates -p '{"base_currency":"USD","email":"user@email.com"}'
-```
 
 ### Upload to IronWorker
 
@@ -186,6 +184,9 @@ iron_worker upload exchangerates
 ```
 iron_worker queue exchangerates -p '{"base_currency":"USD","email":"user@email.com"}'
 ```
+
+### More CLI options
+You can find more CLI options at [http://dev.iron.io/worker/reference/cli/](http://dev.iron.io/worker/reference/cli/)
 
 ## AWS Lambda
 
