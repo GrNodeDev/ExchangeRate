@@ -165,6 +165,14 @@ remote
 
 2) Save the file with the name ```exchangerates.worker```
 
+### Test Locally
+
+The IronWorker CLI provides a handy command that allows you to test your worker locally prior to uploading.  So to test our command we will run:
+
+```
+iron_worker run exchangerates -p '{"base_currency":"USD","email":"user@email.com"}'
+```
+
 ### Upload to IronWorker
 
 To upload your worker you will just need to run
